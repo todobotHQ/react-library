@@ -1,8 +1,8 @@
 import React from "react";
 
-const Button = ({ title, onClick }) => (
-  <button className="Button" onClick={onClick}>
-    {title}
+const Button = (props) => (
+  <button className="Button" onClick={props.onClick}>
+    {props.title}
 
     {/*language=CSS*/}
     <style jsx>{`
