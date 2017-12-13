@@ -18,6 +18,9 @@ storiesOf("Button", module)
   .add("simple text", () => (
     <Button title="Hello Button" onClick={action("clicked Hello Button")} />
   ))
-  .add("with some emoji", () => (
-    <Button title="😀 😎 👍 💯" onClick={action("clicked Emojis")} />
+  .add("Large text", () => (
+    <Button title="Click me to save or create something amazing in javascript! Come on!" onClick={action("clicked large text button")} />
+  ))
+  .add("Yelling", () => (
+    <Button title="CLICK ME!!!" onClick={action("clicked a yelling button")} />
   ));

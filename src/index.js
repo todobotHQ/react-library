@@ -1,7 +1,18 @@
 import React from "react";
 
-const Button = (props) => (
-  <button className="Button" onClick={props.onClick}>
+const isImportant = title => {
+  return title.includes("!");
+};
+const isYelling = title => {
+  return title.includes("!!!");
+};
+
+const Button = props => (
+  <button
+    className={`Button ${isImportant(props.title) && "important"} 
+      ${isYelling(props.title) && "yelling"}`}
+    onClick={props.onClick}
+  >
     {props.title}
 
     {/*language=CSS*/}
@@ -13,6 +24,13 @@ const Button = (props) => (
         font-size: 14px;
         border: none;
         border-radius: 4px;
+      }
+      Button.important {
+        background-color: red;
+      }
+      Button.yelling {
+        background-color: yellow;
+        color: black;
       }
     `}</style>
   </button>
