@@ -4,7 +4,7 @@ const isImportant = title => {
   return title.includes("!");
 };
 const isYelling = title => {
-  return title.includes("!!!");
+  return title === title.toUpperCase();
 };
 
 const Button = props => (
