@@ -1,16 +1,19 @@
+/* @flow */
+'use strict';
+
 import React from "react";
 
-const isImportant = title => {
+const isImportant = (title: string): boolean => {
   return title.includes("!");
 };
-const isYelling = title => {
+const isYelling = (title: string): boolean => {
   return title === title.toUpperCase();
 };
 
-const Button = props => (
+const Button = (props: {title: string, onClick: ()=>{} }) => (
   <button
-    className={`Button ${isImportant(props.title) && "important"} 
-      ${isYelling(props.title) && "yelling"}`}
+    className={`Button ${isImportant(props.title) ? "important" : ""} 
+      ${isYelling(props.title) ? "yelling" : ""}` }
     onClick={props.onClick}
   >
     {props.title}
